@@ -10,7 +10,9 @@
                     </div>
                 {% endif %}
                 <div class="summary">{{ article.summary }}
-                    {% include 'includes/comment_count.html' %}
+                    {% if DUOSHUO_DISPLAY_COMMENT_COUNTS %}
+                        {% include 'includes/duoshuo_comment_count.html' %}
+                    {% endif %}
                     <a class="btn btn-default btn-xs" href="{{ SITEURL }}/{{ article.url }}">more ...</a>
                 </div>
             </article>
