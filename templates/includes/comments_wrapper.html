@@ -1,0 +1,11 @@
+{% macro comment_wrapper(content) %}
+{% if (content.metadata['comment'] is not defined) or (content.metadata['comment'] | trim | upper == 'ON') %}
+<div id="content-comments">
+    {% if content.settings['DISQUS_SITENAME'] %}
+        {% include "includes/disqus.html" %}
+    {% elif content.settings['DUOSHUO_SHORTNAME'] %}
+        {% include "includes/duoshuo.html" %}
+    {% endif %}
+</div>
+{% endif %}
+{% endmacro %}

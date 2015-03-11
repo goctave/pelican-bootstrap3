@@ -91,7 +91,9 @@
             {% include 'includes/related-posts.html' %}
             {% include 'includes/addthis.html' %}
             {% include 'includes/shariff.html' %}
-            {% include 'includes/comments.html' %}
+            {% from 'includes/comments_wrapper.html' import comment_wrapper %}
+            {{ comment_wrapper(article) }}
+
         </article>
     </section>
 

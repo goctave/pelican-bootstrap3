@@ -56,9 +56,8 @@
         {% endif %}
         <div class="entry-content">
             {{ page.content }}
-            {% if page.comments == 'enabled' %}
-                {% include 'includes/comments.html' %}
-            {% endif %}
+            {% from 'includes/comments_wrapper.html' import comment_wrapper %}
+            {{ comment_wrapper(page) }}
         </div>
     </section>
 {% endblock %}
